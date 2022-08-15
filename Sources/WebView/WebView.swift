@@ -3,7 +3,7 @@ import Combine
 import WebKit
 
 @dynamicMemberLookup
-public class WebViewStore: ObservableObject {
+open class WebViewStore: ObservableObject {
   @Published public var webView: WKWebView {
     didSet {
       setupObservers()
@@ -62,7 +62,7 @@ public class WebViewStore: ObservableObject {
 
 #if os(iOS)
 /// A container for using a WKWebView in SwiftUI
-public struct WebView: View, UIViewRepresentable {
+open struct WebView: View, UIViewRepresentable {
   /// The WKWebView to display
   public let webView: WKWebView
   
@@ -81,7 +81,7 @@ public struct WebView: View, UIViewRepresentable {
 
 #if os(macOS)
 /// A container for using a WKWebView in SwiftUI
-public struct WebView: View, NSViewRepresentable {
+open struct WebView: View, NSViewRepresentable {
   /// The WKWebView to display
   public let webView: WKWebView
   
